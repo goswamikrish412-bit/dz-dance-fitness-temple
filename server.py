@@ -9,7 +9,8 @@ import os
 # Change to the app directory
 os.chdir('/app')
 
-PORT = 8000
+# Read port from environment variable, default to 3000 for frontend
+PORT = int(os.environ.get('PORT', 3000))
 
 class MyHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
