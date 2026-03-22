@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - DZ Dance & Fitness Temple</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-purple-900 via-pink-800 to-red-700 text-white fixed w-full z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="text-3xl font-bold">
+                        <span class="text-yellow-400">DZ</span> Dance & Fitness Temple
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="hover:text-yellow-400 transition">Home</a>
+                    <a href="about.html" class="hover:text-yellow-400 transition">About Us</a>
+                    <a href="classes.html" class="hover:text-yellow-400 transition">Classes</a>
+                    <a href="timetable.html" class="hover:text-yellow-400 transition">Timetable</a>
+                    <a href="gallery.html" class="hover:text-yellow-400 transition">Gallery</a>
+                    <a href="contact.html" class="hover:text-yellow-400 transition font-semibold">Contact</a>
+                    <a href="tel:9306926762" class="bg-yellow-400 text-purple-900 px-6 py-2 rounded-full font-bold hover:bg-yellow-300 transition">Call Now</a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="index.html" class="block hover:text-yellow-400 transition">Home</a>
+                <a href="about.html" class="block hover:text-yellow-400 transition">About Us</a>
+                <a href="classes.html" class="block hover:text-yellow-400 transition">Classes</a>
+                <a href="timetable.html" class="block hover:text-yellow-400 transition">Timetable</a>
+                <a href="gallery.html" class="block hover:text-yellow-400 transition">Gallery</a>
+                <a href="contact.html" class="block hover:text-yellow-400 transition font-semibold">Contact</a>
+                <a href="tel:9306926762" class="block bg-yellow-400 text-purple-900 px-6 py-2 rounded-full font-bold text-center">Call Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-purple-900 via-pink-800 to-red-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4">Get in <span class="text-yellow-400">Touch</span></h1>
+            <p class="text-xl max-w-2xl mx-auto">We'd love to hear from you! Reach out for class bookings or any questions</p>
+        </div>
+    </section>
+
+    <!-- Contact Information Cards -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <!-- Phone Card -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center transform hover:-translate-y-2 transition">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Call Us</h3>
+                    <a href="tel:9306926762" class="text-purple-600 text-lg font-semibold hover:text-purple-800">9306926762</a>
+                    <p class="text-gray-600 text-sm mt-2">Mon-Sat: 6 AM - 10 PM<br>Sunday: 9 AM - 5 PM</p>
+                </div>
+
+                <!-- WhatsApp Card -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center transform hover:-translate-y-2 transition">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-whatsapp text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">WhatsApp</h3>
+                    <a href="https://wa.me/919306926762" target="_blank" class="text-green-600 text-lg font-semibold hover:text-green-800">Chat with us</a>
+                    <p class="text-gray-600 text-sm mt-2">Quick response guaranteed!</p>
+                </div>
+
+                <!-- Location Card -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center transform hover:-translate-y-2 transition">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Visit Us</h3>
+                    <p class="text-gray-700 text-sm">476, R, Near Bal Vikas School<br>Model Town, Panipat<br>Haryana, 132103</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                
+                <!-- Contact Form -->
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Send us a <span class="text-purple-600">Message</span></h2>
+                    <p class="text-gray-600 mb-8">Fill out the form below and we'll get back to you as soon as possible!</p>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-semibold mb-2">Your Name *</label>
+                            <input type="text" id="name" name="name" required 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-600"
+                                placeholder="Enter your name">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-600"
+                                placeholder="Enter your phone number">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 font-semibold mb-2">Message *</label>
+                            <textarea id="message" name="message" rows="5" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-600"
+                                placeholder="Tell us about your interest in our classes..."></textarea>
+                        </div>
+
+                        <div id="formMessage" class="hidden"></div>
+                        
+                        <button type="submit" 
+                            class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-lg font-bold text-lg hover:from-purple-700 hover:to-pink-700 transition transform hover:scale-105 shadow-lg"
+                            data-testid="contact-form-submit-btn">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Google Map -->
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Find Us on <span class="text-purple-600">Map</span></h2>
+                    <div class="rounded-2xl overflow-hidden shadow-lg h-[500px]">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3480.9247686891845!2d76.96874631508233!3d29.386799582131873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390dde6e1e1e1e1e%3A0x1e1e1e1e1e1e1e1e!2sModel%20Town%2C%20Panipat%2C%20Haryana%20132103!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="mt-6 bg-purple-50 border-l-4 border-purple-600 p-4 rounded">
+                        <p class="text-gray-700">
+                            <i class="fas fa-info-circle text-purple-600 mr-2"></i>
+                            <strong>Address:</strong> 476, R, Near Bal Vikas School, Model Town, Panipat, Haryana, 132103
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Options -->
+    <section class="py-16 bg-gradient-to-r from-purple-900 via-pink-800 to-red-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Prefer Direct Contact?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Choose your preferred way to connect with us!</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:9306926762" class="bg-white text-purple-900 px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transition transform hover:scale-105 shadow-xl">
+                    <i class="fas fa-phone mr-2"></i>Call: 9306926762
+                </a>
+                <a href="https://wa.me/919306926762" target="_blank" class="bg-green-500 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-green-600 transition transform hover:scale-105 shadow-xl">
+                    <i class="fab fa-whatsapp mr-2"></i>WhatsApp Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4"><span class="text-yellow-400">DZ</span> Dance Temple</h3>
+                    <p class="text-gray-400 mb-4">Premier dance and fitness studio in Panipat, offering world-class training for all ages and levels.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-yellow-400 transition">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-yellow-400 transition">About Us</a></li>
+                        <li><a href="classes.html" class="text-gray-400 hover:text-yellow-400 transition">Classes</a></li>
+                        <li><a href="timetable.html" class="text-gray-400 hover:text-yellow-400 transition">Timetable</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-yellow-400 transition">Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><i class="fas fa-phone mr-2 text-yellow-400"></i> 9306926762</li>
+                        <li><i class="fas fa-map-marker-alt mr-2 text-yellow-400"></i> 476, R, Near Bal Vikas School, Model Town, Panipat, Haryana, 132103</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Opening Hours</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><strong class="text-white">Monday - Saturday</strong><br>6:00 AM – 10:00 PM</li>
+                        <li><strong class="text-white">Sunday</strong><br>9:00 AM – 5:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 DZ Dance & Fitness Temple. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919306926762" target="_blank" class="whatsapp-float" data-testid="whatsapp-float-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
