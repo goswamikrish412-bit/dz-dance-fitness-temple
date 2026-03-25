@@ -1,0 +1,147 @@
+{% extends 'layout.html' %}
+{% block title %}Contact Us - DZ Dance & Fitness Temple{% endblock %}
+{% block extra_css %}
+<style>
+.alert {
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1rem;
+    display: none;
+}
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.lightbox img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: var(--radius-lg);
+}
+</style>
+{% endblock %}
+{% block content %}
+<section class="hero" style="padding: 6rem 0 3rem;">
+    <div class="container text-center">
+        <h1>Get in <span class="text-gold">Touch</span></h1>
+        <p>We'd love to hear from you! Reach out for class bookings or any questions</p>
+    </div>
+</section>
+
+<section class="section section-light">
+    <div class="container">
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-content text-center">
+                    <div style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="card-title">Call Us</h3>
+                    <a href="tel:{{ config.BUSINESS_PHONE }}" class="text-gold" style="font-size: 1.25rem; font-weight: 600;">{{ config.BUSINESS_PHONE }}</a>
+                    <p style="margin-top: 0.5rem; color: var(--medium-gray);">{{ config.OPENING_HOURS.weekdays }}</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content text-center">
+                    <div style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="card-title">WhatsApp</h3>
+                    <a href="https://wa.me/91{{ config.BUSINESS_PHONE }}" target="_blank" class="text-gold" style="font-size: 1.25rem; font-weight: 600;">Chat with us</a>
+                    <p style="margin-top: 0.5rem; color: var(--medium-gray);">Quick response guaranteed!</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content text-center">
+                    <div style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="card-title">Visit Us</h3>
+                    <p>{{ config.BUSINESS_ADDRESS }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="grid-2">
+            <div>
+                <h2 class="section-title">Send us a <span>Message</span></h2>
+                <p style="margin-bottom: 2rem; color: var(--medium-gray);">Fill out the form below and we'll get back to you as soon as possible!</p>
+                
+                <form id="contactForm" method="POST">
+                    <div id="formMessage" class="alert"></div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Your Name *</label>
+                        <input type="text" name="name" class="form-input" required placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Phone Number *</label>
+                        <input type="tel" name="phone" class="form-input" required placeholder="Enter your phone number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Message *</label>
+                        <textarea name="message" class="form-textarea" required placeholder="Tell us about your interest in our classes..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+            
+            <div>
+                <h2 class="section-title">Find Us on <span>Map</span></h2>
+                <div style="border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); height: 500px;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3480.9247686891845!2d76.96874631508233!3d29.386799582131873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390dde6e1e1e1e1e%3A0x1e1e1e1e1e1e1e1e!2sModel%20Town%2C%20Panipat%2C%20Haryana%20132103!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

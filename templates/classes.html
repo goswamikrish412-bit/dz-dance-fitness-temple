@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% block title %}Classes - DZ Dance & Fitness Temple{% endblock %}
+{% block content %}
+<section class="hero" style="padding: 6rem 0 3rem;">
+    <div class="container text-center">
+        <h1>Our <span class="text-gold">Classes</span></h1>
+        <p>Discover the perfect dance style for you - from beginner to advanced levels</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="grid-3">
+            {% for class in classes %}
+            <div class="card">
+                {% if class.image %}
+                <div class="card-image-wrapper">
+                    <img src="{{ class.image.url }}" alt="{{ class.name }}" class="card-image">
+                    <div class="card-badge">{{ class.level }}</div>
+                </div>
+                {% endif %}
+                <div class="card-content">
+                    <h3 class="card-title">{{ class.name }}</h3>
+                    <p class="card-text">{{ class.description }}</p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-signal"></i> {{ class.level }}</span>
+                        <span><i class="fas fa-clock"></i> {{ class.duration }}</span>
+                    </div>
+                    <a href="{{ url_for('contact') }}" class="btn btn-primary" style="width: 100%;">Enroll Now</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section section-dark">
+    <div class="container text-center">
+        <h2 class="section-title">Ready to Start Dancing?</h2>
+        <p class="section-subtitle" style="margin-bottom: 2rem;">Choose your class and begin your dance journey today!</p>
+        <div class="hero-buttons">
+            <a href="{{ url_for('contact') }}" class="btn btn-primary">
+                <i class="fas fa-calendar-check"></i> Book Your Class
+            </a>
+            <a href="https://wa.me/91{{ config.BUSINESS_PHONE }}" target="_blank" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Ask Questions
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

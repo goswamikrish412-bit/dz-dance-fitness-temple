@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DZ Dance & Fitness Temple - Premier dance and fitness studio in Panipat. Hip Hop, Zumba, Contemporary, and more!">
+    <title>{% block title %}DZ Dance & Fitness Temple{% endblock %}</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💃</text></svg>">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="{{ url_for('index') }}" class="nav-brand">
+                <span>DZ</span> Dance & Fitness Temple
+            </a>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link">About Us</a></li>
+                <li><a href="{{ url_for('classes') }}" class="nav-link">Classes</a></li>
+                <li><a href="{{ url_for('timetable') }}" class="nav-link">Timetable</a></li>
+                <li><a href="{{ url_for('gallery') }}" class="nav-link">Gallery</a></li>
+                <li><a href="{{ url_for('contact') }}" class="nav-link">Contact</a></li>
+                <li><a href="tel:{{ config.BUSINESS_PHONE }}" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">
+                    <i class="fas fa-phone"></i> Call Now
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4><span class="text-gold">DZ</span> Dance Temple</h4>
+                    <p>Premier dance and fitness studio in Panipat, offering world-class training for all ages and levels.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="#" style="font-size: 1.5rem; color: var(--accent-gold);"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="font-size: 1.5rem; color: var(--accent-gold);"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="font-size: 1.5rem; color: var(--accent-gold);"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a href="{{ url_for('classes') }}">Classes</a></li>
+                        <li><a href="{{ url_for('timetable') }}">Timetable</a></li>
+                        <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone text-gold"></i> {{ config.BUSINESS_PHONE }}</li>
+                        <li><i class="fas fa-map-marker-alt text-gold"></i> {{ config.BUSINESS_ADDRESS }}</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Opening Hours</h4>
+                    <p>{{ config.OPENING_HOURS.weekdays }}</p>
+                    <p>{{ config.OPENING_HOURS.weekend }}</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 DZ Dance & Fitness Temple. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/91{{ config.BUSINESS_PHONE }}" target="_blank" class="whatsapp-float" data-testid="whatsapp-float-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

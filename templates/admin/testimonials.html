@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+{% block title %}Manage Testimonials - Admin{% endblock %}
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h1>Manage Testimonials</h1>
+            <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
+        
+        <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-content">
+                <h3>Add New Testimonial</h3>
+                <form method="POST" action="{{ url_for('add_testimonial') }}">
+                    <div class="form-group">
+                        <label class="form-label">Name *</label>
+                        <input type="text" name="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message *</label>
+                        <textarea name="message" class="form-textarea" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Rating (1-5)</label>
+                        <input type="number" name="rating" class="form-input" min="1" max="5" value="5">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Testimonial</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="grid-3">
+            {% for test in testimonials %}
+            <div class="card">
+                <div class="card-content">
+                    <h4>{{ test.name }}</h4>
+                    <div style="color: var(--accent-gold); margin: 0.5rem 0;">
+                        {% for i in range(test.rating) %}<i class="fas fa-star"></i>{% endfor %}
+                    </div>
+                    <p>{{ test.message }}</p>
+                    <div style="margin-top: 1rem; display: flex; gap: 0.5rem;">
+                        <button onclick="toggleTestimonial({{ test.id }})" class="btn {% if test.is_active %}btn-secondary{% else %}btn-primary{% endif %}" style="flex: 1;">
+                            {% if test.is_active %}Deactivate{% else %}Activate{% endif %}
+                        </button>
+                        <form method="POST" action="{{ url_for('delete_testimonial', id=test.id) }}" onsubmit="return confirmDelete()" style="flex: 1;">
+                            <button type="submit" class="btn btn-secondary" style="width: 100%;">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

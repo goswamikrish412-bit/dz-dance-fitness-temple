@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% block title %}Manage Gallery - Admin{% endblock %}
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h1>Manage Gallery</h1>
+            <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
+        
+        <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-content">
+                <h3>Add New Image</h3>
+                <form method="POST" action="{{ url_for('add_gallery_image') }}">
+                    <div class="form-group">
+                        <label class="form-label">Image URL *</label>
+                        <input type="url" name="image_url" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Title</label>
+                        <input type="text" name="title" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <input type="text" name="description" class="form-input">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Image</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="gallery-grid">
+            {% for img in images %}
+            <div class="card">
+                <img src="{{ img.image_url }}" alt="{{ img.title }}" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="card-content">
+                    <h4>{{ img.title }}</h4>
+                    <p>{{ img.description }}</p>
+                    <form method="POST" action="{{ url_for('delete_gallery_image', id=img.id) }}" onsubmit="return confirmDelete()">
+                        <button type="submit" class="btn btn-secondary" style="width: 100%; margin-top: 0.5rem;">Delete</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

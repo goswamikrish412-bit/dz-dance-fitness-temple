@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h1>Admin Dashboard</h1>
+            <a href="{{ url_for('admin_logout') }}" class="btn btn-secondary">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+        
+        <div class="grid-4">
+            <div class="card">
+                <div class="card-content text-center">
+                    <div style="font-size: 3rem; color: var(--accent-gold);">{{ total_submissions }}</div>
+                    <h4>Total Submissions</h4>
+                    <a href="{{ url_for('admin_submissions') }}" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">View All</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content text-center">
+                    <div style="font-size: 3rem; color: var(--accent-blue);">{{ unread_submissions }}</div>
+                    <h4>Unread Submissions</h4>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content text-center">
+                    <div style="font-size: 3rem; color: var(--accent-gold);">{{ total_gallery_images }}</div>
+                    <h4>Gallery Images</h4>
+                    <a href="{{ url_for('admin_gallery') }}" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Manage</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content text-center">
+                    <div style="font-size: 3rem; color: var(--accent-blue);">{{ total_testimonials }}</div>
+                    <h4>Testimonials</h4>
+                    <a href="{{ url_for('admin_testimonials') }}" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Manage</a>
+                </div>
+            </div>
+        </div>
+        
+        <h2 style="margin: 3rem 0 1rem;">Recent Submissions</h2>
+        <div class="card">
+            <div class="card-content">
+                {% for sub in recent_submissions %}
+                <div style="padding: 1rem; border-bottom: 1px solid var(--light-gray);">
+                    <strong>{{ sub.name }}</strong> - {{ sub.phone }}
+                    <p style="color: var(--medium-gray); margin: 0.5rem 0;">{{ sub.message }}</p>
+                    <small style="color: var(--medium-gray);">{{ sub.submitted_at.strftime('%Y-%m-%d %H:%M') }}</small>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

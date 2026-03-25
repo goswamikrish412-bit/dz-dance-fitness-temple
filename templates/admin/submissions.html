@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block title %}Contact Submissions - Admin{% endblock %}
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h1>Contact Submissions</h1>
+            <div>
+                <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+                <a href="{{ url_for('admin_logout') }}" class="btn btn-secondary">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </div>
+        
+        {% for sub in submissions %}
+        <div class="card" style="margin-bottom: 1rem;">
+            <div class="card-content">
+                <div style="display: flex; justify-content: space-between; align-items: start;">
+                    <div style="flex: 1;">
+                        <h3>{{ sub.name }} {% if not sub.is_read %}<span style="color: var(--accent-gold);">[NEW]</span>{% endif %}</h3>
+                        <p><i class="fas fa-phone"></i> {{ sub.phone }}</p>
+                        <p style="margin: 1rem 0;">{{ sub.message }}</p>
+                        <small style="color: var(--medium-gray);">{{ sub.submitted_at.strftime('%Y-%m-%d %H:%M:%S') }}</small>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        {% if not sub.is_read %}
+                        <button onclick="markAsRead({{ sub.id }})" class="btn btn-primary">Mark as Read</button>
+                        {% endif %}
+                        <form method="POST" action="{{ url_for('delete_submission', id=sub.id) }}" style="display: inline;" onsubmit="return confirmDelete()">
+                            <button type="submit" class="btn btn-secondary">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
