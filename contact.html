@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - DZ Dance & Fitness Temple</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💃</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    .alert{padding:1rem;border-radius:var(--radius-md);margin-bottom:1rem;display:none}
+    .alert-success{background:#d4edda;color:#155724;border:1px solid #c3e6cb}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand"><span>DZ</span> Dance & Fitness Temple</a>
+            <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="classes.html" class="nav-link">Classes</a></li>
+                <li><a href="timetable.html" class="nav-link">Timetable</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="tel:9306926762" class="btn btn-primary" style="padding: 0.75rem 1.5rem;"><i class="fas fa-phone"></i> Call Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" style="padding: 6rem 0 3rem;">
+        <div class="container text-center">
+            <h1>Get in <span class="text-gold">Touch</span></h1>
+            <p>We'd love to hear from you! Reach out for class bookings or any questions</p>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-content text-center">
+                        <div style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;"><i class="fas fa-phone"></i></div>
+                        <h3 class="card-title">Call Us</h3>
+                        <a href="tel:9306926762" class="text-gold" style="font-size: 1.25rem; font-weight: 600;">9306926762</a>
+                        <p style="margin-top: 0.5rem; color: var(--medium-gray);">Mon-Sat: 6 AM – 10 PM</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content text-center">
+                        <div style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;"><i class="fab fa-whatsapp"></i></div>
+                        <h3 class="card-title">WhatsApp</h3>
+                        <a href="https://wa.me/919306926762" target="_blank" class="text-gold" style="font-size: 1.25rem; font-weight: 600;">Chat with us</a>
+                        <p style="margin-top: 0.5rem; color: var(--medium-gray);">Quick response!</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content text-center">
+                        <div style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;"><i class="fas fa-map-marker-alt"></i></div>
+                        <h3 class="card-title">Visit Us</h3>
+                        <p>476, R, Near Bal Vikas School, Model Town, Panipat, Haryana, 132103</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <h2 class="section-title">Send us a <span>Message</span></h2>
+                    <p style="margin-bottom: 2rem; color: var(--medium-gray);">Fill out the form and we'll contact you soon!</p>
+                    <form id="contactForm">
+                        <div id="formMessage" class="alert"></div>
+                        <div class="form-group">
+                            <label class="form-label">Your Name *</label>
+                            <input type="text" id="name" class="form-input" required placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-input" required placeholder="Enter your phone">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Message *</label>
+                            <textarea id="message" class="form-textarea" required placeholder="Tell us about your interest..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    </form>
+                </div>
+                <div>
+                    <h2 class="section-title">Find Us on <span>Map</span></h2>
+                    <div style="border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); height: 500px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3480.9247686891845!2d76.96874631508233!3d29.386799582131873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390dde6e1e1e1e1e%3A0x1e1e1e1e1e1e1e1e!2sModel%20Town%2C%20Panipat%2C%20Haryana%20132103!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4><span class="text-gold">DZ</span> Dance Temple</h4>
+                    <p>Premier dance studio</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone text-gold"></i> 9306926762</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>Mon-Sat: 6 AM – 10 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 DZ Dance & Fitness Temple</p></div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919306926762" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
+        const msg = document.getElementById('formMessage');
+        
+        msg.className = 'alert alert-success';
+        msg.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Redirecting to WhatsApp...';
+        msg.style.display = 'block';
+        
+        setTimeout(() => {
+            const text = `Hello! I'm ${name}. ${message}`;
+            window.open(`https://wa.me/919306926762?text=${encodeURIComponent(text)}`, '_blank');
+            document.getElementById('contactForm').reset();
+        }, 1500);
+    });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
